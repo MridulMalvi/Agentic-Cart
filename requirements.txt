@@ -1,0 +1,129 @@
+# ============================================================
+# AI Shopping Assistant (Refactored) — requirements.txt
+# CrewAI + LangGraph + MongoDB + NLP + Flask + Streamlit
+#
+# Install:
+#   pip install -r requirements.txt
+#
+# For CPU-only PyTorch (AMD Ryzen / no CUDA):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# ============================================================
+
+
+# ── LangGraph ecosystem ──────────────────────────────────────
+langgraph==1.1.3
+langgraph-prebuilt==1.0.8
+langgraph-checkpoint==4.0.1
+langgraph-sdk==0.3.12
+
+
+# ── LangChain ecosystem ──────────────────────────────────────
+langchain-core==1.2.22
+langchain==1.2.13
+langchain-mistralai==1.1.2
+langchain-community==0.3.27
+
+
+# ── Mistral AI SDK ───────────────────────────────────────────
+mistralai==2.1.3
+
+
+# ── CrewAI (multi-agent framework) ───────────────────────────
+crewai>=0.80.0
+crewai-tools>=0.14.0
+
+
+# ── Streamlit (UI) ───────────────────────────────────────────
+streamlit==1.45.1
+streamlit-extras>=0.4.0
+
+
+# ── Flask API backend ─────────────────────────────────────────
+flask>=3.1.0
+flask-cors>=5.0.0
+
+
+# ── Database ─────────────────────────────────────────────────
+# MySQL — for users & orders (relational integrity)
+mysql-connector-python==9.6.0
+
+# MongoDB — for products, cart, embeddings (flexible schema)
+pymongo>=4.10.0
+motor>=3.6.0          # async MongoDB driver (used by Flask background tasks)
+
+
+# ── Redis (session-only after refactor) ──────────────────────
+redis==7.4.0
+
+
+# ── NLP / Semantic Search ─────────────────────────────────────
+# Sentence-transformers: local, offline, AMD-CPU compatible
+# Run: pip install torch --index-url https://download.pytorch.org/whl/cpu FIRST
+sentence-transformers>=3.3.0
+
+# Sentiment analysis
+vaderSentiment>=3.3.2
+textblob>=0.18.0
+
+# Text utilities
+nltk>=3.9.0
+
+
+# ── Authentication ───────────────────────────────────────────
+bcrypt==4.2.1
+
+
+# ── Environment config ───────────────────────────────────────
+python-dotenv==1.2.1
+
+
+# ── HTTP client ───────────────────────────────────────────────
+httpx==0.28.1
+httpcore==1.0.9
+requests>=2.32.0
+
+
+# ── Data validation ───────────────────────────────────────────
+pydantic==2.11.10
+
+
+# ── Async runtime ─────────────────────────────────────────────
+anyio==4.13.0
+
+
+# ── Serialisation ─────────────────────────────────────────────
+orjson==3.10.18
+
+
+# ── Retry logic ───────────────────────────────────────────────
+tenacity==9.0.0
+
+
+# ── Type hints ────────────────────────────────────────────────
+typing-extensions==4.13.2
+
+
+# ── LangSmith tracing ─────────────────────────────────────────
+langsmith==0.7.22
+
+
+# ── Packaging ─────────────────────────────────────────────────
+packaging==24.2
+
+
+# ── C bindings ────────────────────────────────────────────────
+cffi==1.17.1
+cryptography==44.0.2
+
+
+# ── Scientific / ML utilities ────────────────────────────────
+numpy>=1.26.0
+scikit-learn>=1.5.0      # cosine_similarity for vector search fallback
+
+
+# ── Process / thread pooling (AMD core pinning) ──────────────
+psutil>=6.1.0            # used to pin workers to P-cores on AMD
+
+
+# ── Concurrency (Streamlit async bridge) ─────────────────────
+asyncio-throttle>=1.0.2
