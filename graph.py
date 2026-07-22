@@ -128,9 +128,6 @@ ALL_TOOLS = LOGIN_TOOLS + SHOPPING_TOOLS
 # Singleton ToolNode — created once at module load
 _tool_node = ToolNode(ALL_TOOLS)
 
-login_llm    = _base_llm.bind_tools(LOGIN_TOOLS)
-shopping_llm = _base_llm.bind_tools(SHOPPING_TOOLS)
-
 
 # ── State ─────────────────────────────────────────────────────────────────────
 

@@ -22,6 +22,7 @@ langchain-core==1.2.22
 langchain==1.2.13
 langchain-mistralai==1.1.2
 langchain-community==0.3.27
+langchain-google-genai>=2.0.0
 
 
 # ── Mistral AI SDK ───────────────────────────────────────────
